@@ -1,14 +1,105 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>MyProject</title>
+        <title>Steppe & Hearth Cafe</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <header>
-            <nav>
-                Brat
+        <header class="site-header">
+            <div class="brand">Steppe & Hearth</div>
+            <nav class="top-nav" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#story">Story</a>
+                <a href="#contact">Contact</a>
             </nav>
+            <button class="mode-toggle" type="button" aria-label="Switch color mode">
+                Evening
+            </button>
         </header>
-        <h1>Hello World!</h1>
+
+        <div class="page">
+            <aside class="sidebar">
+                <h2>Tuva Cafe</h2>
+                <nav aria-label="Sidebar navigation">
+                    <a class="active" href="#today">Today's Table</a>
+                    <a href="#coffee-tea">Coffee & Tea</a>
+                    <a href="#bakes">Bakes</a>
+                    <a href="#breakfast">Breakfast</a>
+                    <a href="#gatherings">Gatherings</a>
+                </nav>
+
+                <div class="hours">
+                    <h3>Open Daily</h3>
+                    <p>Mon-Fri: 7:00-18:00</p>
+                    <p>Sat-Sun: 8:00-17:00</p>
+                </div>
+            </aside>
+
+            <main class="content">
+                <section class="hero" id="home">
+                    <div class="hero-copy">
+                        <span class="eyebrow">Tuvan-inspired cafe</span>
+                        <h1>Warm cups, steppe colors, and a table to slow down.</h1>
+                        <p>
+                            A calm cafe shaped by felt textures, carved wood, mountain air,
+                            coffee, milk tea, and fresh morning bakes.
+                        </p>
+                        <a class="button" href="#menu">View Menu</a>
+                    </div>
+                    <img src="assets/tuvan-cafe-hero.png" alt="Tuvan-inspired cafe table with coffee, tea, pastries, and felt textiles">
+                </section>
+
+                <section class="grid" id="menu" aria-label="Cafe highlights">
+                    <article class="card" id="today">
+                        <h3>Steppe Latte</h3>
+                        <p>Espresso with steamed milk, wildflower honey, and a soft spice finish.</p>
+                    </article>
+                    <article class="card" id="coffee-tea">
+                        <h3>Milk Tea</h3>
+                        <p>Rich black tea with milk and a pinch of salt, served warm and simple.</p>
+                    </article>
+                    <article class="card" id="bakes">
+                        <h3>Morning Bakes</h3>
+                        <p>Fresh pastries with honey, nuts, and buttered dough from the oven.</p>
+                    </article>
+                </section>
+
+                <section class="grid menu-grid" aria-label="More cafe offerings">
+                    <article class="card" id="breakfast">
+                        <h3>Breakfast</h3>
+                        <p>Eggs, sourdough, herbs, and warm grains for a steady morning.</p>
+                    </article>
+                    <article class="card" id="gatherings">
+                        <h3>Gatherings</h3>
+                        <p>Small tables for tea, quiet talks, and weekend tasting boards.</p>
+                    </article>
+                    <article class="card" id="story">
+                        <h3>Our Style</h3>
+                        <p>Inspired by steppe color, felt craft, mountain light, and carved wood.</p>
+                    </article>
+                </section>
+
+                <section class="panel" id="contact">
+                    <h2>Visit Us</h2>
+                    <p>
+                        Find us on Maple Street, two blocks from the market. Sit near the
+                        woven wall panels, take a cup to go, or stay for a quiet breakfast.
+                    </p>
+                </section>
+            </main>
+        </div>
+
+        <script>
+            const modeToggle = document.querySelector(".mode-toggle");
+
+            modeToggle.addEventListener("click", () => {
+                document.body.classList.toggle("evening-mode");
+                modeToggle.textContent = document.body.classList.contains("evening-mode")
+                    ? "Day"
+                    : "Evening";
+            });
+        </script>
     </body>
 </html>
