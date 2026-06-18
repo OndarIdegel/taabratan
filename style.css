@@ -5,5 +5,26 @@
 
 header {
   background-color: black;
-  height: 200px;
+
+}
+header nav {
+  color: white;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome {
+  margin: 0 auto;
+  padding: 200px;
+  margin-top: 200px;
+  background-color: aquamarine;
+}
+
+.welcome__title h1 {
+  font-weight: 500;
+  color: red;
 }
